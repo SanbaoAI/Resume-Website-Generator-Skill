@@ -18,9 +18,23 @@
 
 <br>
 
-[安装](#安装) · [流水线](#九阶段流水线) · [设计纪律](#设计纪律) · [示例](#示例输出) · [质量门禁](#质量门禁) · [FAQ](#常见问题) · [License](#license)
+[安装](#安装) · [预览](#预览) · [流水线](#九阶段流水线) · [设计纪律](#设计纪律) · [示例](#示例输出) · [质量门禁](#质量门禁) · [FAQ](#常见问题) · [License](#license)
 
 </div>
+
+---
+
+## 预览
+
+<p align="center">
+  <img src="./assets/readme/demo-hero.png" alt="Name-first Hero：浮动 Pill 导航与数据指标" width="780" />
+</p>
+
+<p align="center">
+  <img src="./assets/readme/demo-projects.png" alt="Bento 项目卡片布局" width="780" />
+</p>
+
+<p align="center"><sub>脱敏演示输出 — 姓名、公司、时间均为虚构。布局：Name-first Hero · 浮动 Pill 导航 · Stats Bar · Bento 项目区。</sub></p>
 
 ---
 
@@ -156,6 +170,8 @@ Resume-Website-Generator-Skill/
 ---
 
 ## 示例输出
+
+上方截图为 **AI 产品经理简历脱敏生成** 的实际效果（全部个人信息已替换为虚构数据）。
 
 | 输入 | 输出 | 说明 |
 |------|------|------|

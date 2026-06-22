@@ -18,9 +18,23 @@
 
 <br>
 
-[Install](#install) · [Pipeline](#nine-stage-pipeline) · [Design Rules](#design-discipline) · [Examples](#example-output) · [Quality Gate](#quality-gate) · [FAQ](#faq) · [License](#license)
+[Install](#install) · [Preview](#preview) · [Pipeline](#nine-stage-pipeline) · [Design Rules](#design-discipline) · [Examples](#example-output) · [Quality Gate](#quality-gate) · [FAQ](#faq) · [License](#license)
 
 </div>
+
+---
+
+## Preview
+
+<p align="center">
+  <img src="./assets/readme/demo-hero.png" alt="Name-first hero with floating pill nav and stats bar" width="780" />
+</p>
+
+<p align="center">
+  <img src="./assets/readme/demo-projects.png" alt="Bento project grid section" width="780" />
+</p>
+
+<p align="center"><sub>Desensitized demo output — fictional identity, companies, and dates. Layout: Name-first Hero · floating pill nav · stats bar · Bento projects.</sub></p>
 
 ---
 
@@ -156,6 +170,8 @@ Resume-Website-Generator-Skill/
 ---
 
 ## Example Output
+
+Screenshots above are from a **desensitized AI PM resume** run (all PII replaced with fictional data).
 
 | Input | Output | Notes |
 |-------|--------|-------|
