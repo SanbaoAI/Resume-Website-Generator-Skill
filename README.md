@@ -1,186 +1,242 @@
+<div align="center">
+
+**English** | [简体中文](./README.zh-CN.md)
+
 # Resume Website Generator Skill
 
-Transform a PDF, DOC, or Markdown resume into a **premium modern personal website** — through a structured 9-stage design pipeline, not a direct HTML conversion.
+**Turn a PDF resume into a personal website with taste.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+*Anti-Slop Agent Skill — a 9-stage design pipeline that refuses template-looking HTML.*
+
+<br>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.2.0-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](skill.md)
+[![Agent Skills](https://img.shields.io/badge/Agent-Skills-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](#install)
+[![Cursor](https://img.shields.io/badge/Cursor-Ready-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](install.sh)
+[![Inspired by taste-skill](https://img.shields.io/badge/inspired%20by-taste--skill-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](https://github.com/Leonxlnx/taste-skill)
+
+<br>
+
+[Install](#install) · [Pipeline](#nine-stage-pipeline) · [Design Rules](#design-discipline) · [Examples](#example-output) · [Quality Gate](#quality-gate) · [FAQ](#faq) · [License](#license)
+
+</div>
+
+---
 
 ## What This Is
 
-This repository is a **complete, agent-executable Skill** for AI coding assistants (Cursor, Claude Code, Codex, Gemini CLI, etc.).
+Most agents **dump HTML** when they see a resume — Bootstrap cards, purple gradient heroes, skill progress bars. It reads like *generator output*, not *you*.
 
-It encodes the workflow of a Staff Product Designer + Design System Architect + Senior Frontend Engineer:
+**Resume Website Generator Skill** does the opposite:
+
+> Design first, code last. Every stage produces a reviewable artifact. Frontend work starts at Stage 8 only.
+
+It encodes the workflow of a **Staff Product Designer + Design System Architect + Senior Frontend Engineer** into a portable Skill for Cursor, Claude Code, Codex, Gemini CLI, and other agents.
 
 ```
-Resume → Extract → Analyze → IA → Strategy → Design System → Wireframe → UI Spec → Frontend → Review
+PDF / DOC / Markdown resume
+        ↓
+  Extract → Analyze → IA → Strategy → Design System
+        ↓
+  Wireframes + Layout Spec → UI Spec → Frontend → Quality Review
+        ↓
+  output/<name>/website/   ← deployable static site
 ```
 
-Every stage produces an intermediate artifact. Frontend code is generated **only after** design artifacts exist.
+**Core constraint:** Stages 1–7 **must not** generate HTML, CSS, or JS. No design artifacts → no code.
 
-## Quick Start
+---
 
-### For AI Agents
+## Install
 
-1. Load [skill.md](skill.md) and [system-prompt.md](system-prompt.md) into your context
-2. Accept a resume file (PDF, DOCX, MD) from the user
-3. Execute workflow stages `01` → `09` in [workflow/](workflow/)
-4. Write outputs to `output/<candidate-slug>/`
-5. Deliver the `website/` folder and `review-report.md`
-
-### For Cursor Users
-
-**One-line install:**
+### Cursor (recommended)
 
 ```bash
+# From your project root
 bash Resume-Website-Generator-Skill/install.sh
-```
 
-Or from inside the skill folder:
-
-```bash
-bash install.sh
+# Or from inside the skill folder
+cd Resume-Website-Generator-Skill && bash install.sh
 ```
 
 Then ask Cursor:
 
 > Use the resume-website-generator skill to build a personal website from my resume.
 
-### For Manual / CLI Agents
+### Any Agent
+
+1. Add this repo to agent context
+2. Load [`skill.md`](skill.md) + [`system-prompt.md`](system-prompt.md)
+3. Provide a resume file and execute [`workflow/`](workflow/) stages 01 → 09 in order
+
+### Preview the demo site
 
 ```bash
-# Point your agent at this repo and instruct:
-# "Execute skill.md using my resume at ./my-resume.pdf"
-
-# Preview the example output:
-cd examples/example-output/website
+cd examples/example-output-sanbao
 npx serve .
-# or: python3 -m http.server 8080
 ```
+
+---
+
+## How It Differs
+
+| | Typical "resume → web" | This Skill |
+|---|---|---|
+| Deliverables | One HTML file | 9 design artifacts + site + review report |
+| Layout | Sidebar / 3-column cards | **Name-first Hero** + floating pill nav |
+| Aesthetic | Default AI template | **Design Read** + three dials + Pre-Flight anti-slop |
+| Quality | No gate | Stage 09 score ≥ 85 to ship |
+| Privacy | Often leaks PII | Supports desensitized demo workflow |
+
+---
+
+## Nine-Stage Pipeline
+
+| Stage | Output | Code? |
+|-------|--------|-------|
+| 01 Extract | `resume-data.json` | ✗ |
+| 02 Analyze | `candidate-analysis.md` | ✗ |
+| 03 IA | `information-architecture.md` | ✗ |
+| 04 Strategy | `design-strategy.md` + Design Read | ✗ |
+| 05 Design System | `design-system.md` | ✗ |
+| 06 Wireframe | `wireframes.md` + `layout-spec.md` | ✗ |
+| 07 UI Spec | `ui-composition.md` | ✗ |
+| 08 Frontend | `website/` | **✓** |
+| 09 Review | `review-report.md` | fixes only |
+
+See [`skill.md`](skill.md) and each [`workflow/`](workflow/) file for details.
+
+---
+
+## Design Discipline
+
+### Layout contract
+
+From [`rules/layout-system.md`](rules/layout-system.md):
+
+- **Name-first Hero** — the candidate's name is the largest element on the page
+- **Floating pill navigation** — not an edge-to-edge sticky bar
+- **Stats bar** — four verifiable proof points in the hero
+- **Layout variety** — no single card-grid pattern repeated across every section
+
+### Taste discipline (v1.2)
+
+Adapted from [taste-skill](https://github.com/Leonxlnx/taste-skill) — see [`rules/design-taste.md`](rules/design-taste.md):
+
+| Mechanism | Purpose |
+|-----------|---------|
+| **Design Read** | Stage 04: one-line read of audience + vibe + aesthetic family |
+| **Three dials** | `VARIANCE` / `MOTION` / `DENSITY` govern layout and motion |
+| **Pre-Flight** | Stage 09 mechanical checks: eyebrow cap, accent lock, slop scan |
+
+**Rejected by default:** purple mesh heroes · Inter+slate defaults · uppercase label on every section · warm beige+brass palette · skill progress bars · "Download CV" as primary CTA
+
+---
 
 ## Project Structure
 
 ```
 Resume-Website-Generator-Skill/
-├── README.md                 # This file
-├── skill.md                  # Main skill entry (rename to SKILL.md for Cursor)
-├── system-prompt.md          # Agent persona and operating contract
-├── workflow/                 # 9 pipeline stages
-│   ├── 01-Extract-Resume.md
-│   ├── 02-Analyze-Resume.md
-│   ├── 03-Information-Architecture.md
-│   ├── 04-Design-Strategy.md
-│   ├── 05-Design-System.md
-│   ├── 06-Wireframe.md
-│   ├── 07-UI-Composition.md
-│   ├── 08-Frontend-Implementation.md
-│   └── 09-Quality-Review.md
-├── templates/                # Artifact templates
-│   ├── brief-template.md
-│   ├── design-system-template.md
-│   ├── wireframe-template.md
-│   ├── layout-spec-template.md
-│   └── review-template.md
-├── rules/                    # Design and engineering constraints
-│   ├── layout-system.md      # ★ Name-first hero, floating nav, section patterns
+├── skill.md                 # Skill entry (→ SKILL.md after Cursor install)
+├── system-prompt.md         # Agent persona and operating contract
+├── install.sh               # One-line install
+├── workflow/                # Stages 01–09 prompts
+├── rules/                   # Design & engineering constraints
+│   ├── layout-system.md     # ★ Layout contract
+│   ├── design-taste.md      # ★ Anti-slop taste
 │   ├── design-principles.md
-│   ├── frontend-rules.md
-│   ├── typography.md
-│   ├── spacing.md
-│   ├── color-system.md
-│   ├── animation.md
-│   └── output-format.md
+│   └── frontend-rules.md
+├── templates/               # Artifact templates
 └── examples/
-    ├── example-input.pdf     # Sample resume (PDF)
-    ├── example-input.md      # Same content in Markdown
-    └── example-output/
-        └── website/          # Reference implementation
+    ├── example-input-sanbao.md
+    └── example-output-sanbao/   # Public demo (fictional identity)
 ```
 
-## Pipeline Stages
+---
 
-| Stage | Input | Output | Code? |
-|-------|-------|--------|-------|
-| 01 Extract | PDF/DOC/MD | `resume-data.json` | No |
-| 02 Analyze | JSON | `candidate-analysis.md` | No |
-| 03 IA | Analysis + JSON | `information-architecture.md` | No |
-| 04 Strategy | IA + Analysis | `design-strategy.md` | No |
-| 05 Design System | Strategy | `design-system.md` | No |
-| 06 Wireframe | Design System + IA | `wireframes.md` | No |
-| 07 UI Composition | Wireframes + DS | `ui-composition.md` | No |
-| 08 Frontend | All artifacts | `website/` | **Yes** |
-| 09 Review | Website + artifacts | `review-report.md` | Fixes only |
+## Example Output
 
-## Design Philosophy
+| Input | Output | Notes |
+|-------|--------|-------|
+| [example-input-sanbao.md](examples/example-input-sanbao.md) | [example-output-sanbao/](examples/example-output-sanbao/) | Fictional [SanbaoAI](https://github.com/SanbaoAI) — safe to publish |
+| [example-input.md](examples/example-input.md) | [example-output/website/](examples/example-output/website/) | Jane Chen — product designer sample |
 
-Generated sites should feel like **premium product websites**:
+Local preview:
 
-- Editorial typography and generous whitespace
-- Strong visual hierarchy and brand identity
-- Responsive, accessible, minimal
-- Subtle micro-interactions
-- Modern SaaS / Apple-level polish
+```bash
+cd examples/example-output-sanbao && npx serve .
+```
 
-**Avoid:** Bootstrap defaults, dashboard layouts, generic resume templates, skill progress bars, rainbow tag clouds.
+---
 
-See [rules/design-principles.md](rules/design-principles.md) for the full specification.
-
-## Rules & Templates
-
-- **Rules** in `rules/` constrain every design and engineering decision
-- **Templates** in `templates/` define exact artifact formats
-- **Workflows** in `workflow/` contain stage-specific prompts and checklists
-
-Agents must read relevant rule files at each stage (listed in [skill.md](skill.md)).
-
-## Example
-
-Input: [examples/example-input.md](examples/example-input.md) / [examples/example-input.pdf](examples/example-input.pdf)
-
-Output: [examples/example-output/website/](examples/example-output/website/)
-
-The example demonstrates the expected quality bar for a Product Designer candidate.
-
-## Output Directory Convention
+## Output Convention
 
 Each run creates:
 
 ```
-output/jane-chen/
-├── artifacts/
-│   ├── resume-data.json
-│   ├── candidate-analysis.md
-│   ├── information-architecture.md
-│   ├── design-strategy.md
-│   ├── design-system.md
-│   ├── wireframes.md
-│   ├── ui-composition.md
-│   └── review-report.md
-└── website/
-    ├── index.html
-    ├── styles/
-    ├── scripts/
-    └── assets/
+output/<candidate-slug>/
+├── artifacts/          # Full design artifact chain (iterable, reviewable)
+└── website/            # Static site (deploy to Netlify / Vercel / GitHub Pages)
 ```
+
+---
 
 ## Quality Gate
 
-Stage 9 scores the site 0–100 across eight dimensions. Minimum passing score: **85/100**.
+Stage 09 scores eight dimensions (0–100). **Weighted average must be ≥ 85** to pass.
 
-If below threshold, the agent automatically loops back to fix upstream artifacts (max 2 loops).
+Below threshold → agent loops back to the earliest affected stage (max 2 rounds).
 
-See [workflow/09-Quality-Review.md](workflow/09-Quality-Review.md).
+See [`workflow/09-Quality-Review.md`](workflow/09-Quality-Review.md) and [`templates/review-template.md`](templates/review-template.md).
+
+---
+
+## FAQ
+
+**How is this different from "just ask AI to build my resume site"?**  
+This Skill enforces artifact-first delivery: strategy, system, and wireframes exist before any code. The first version is not a template dump.
+
+**What input formats are supported?**  
+PDF, DOCX, DOC, Markdown, plain text.
+
+**Must I use vanilla HTML?**  
+Default stack is semantic HTML + CSS custom properties + minimal JS. Stage 08 can target Next.js, Astro, etc. if the user asks.
+
+**How does this relate to [taste-skill](https://github.com/Leonxlnx/taste-skill)?**  
+taste-skill governs frontend taste; this Skill governs the full resume → design → code pipeline. v1.2 adapts Design Read, dials, and Pre-Flight for portfolio sites.
+
+**Will real resume data leak?**  
+Use fictional data for public examples (`example-input-sanbao`). Do not commit repos containing real phone numbers or emails.
+
+---
 
 ## Contributing
 
-Contributions welcome:
+PRs welcome: new profession examples, Stage 08 framework variants, workflow refinements.
 
-- Additional workflow refinements
-- New example outputs for different professions (engineer, researcher, executive)
-- Framework-specific Stage 8 variants (Next.js, Astro, etc.)
+---
 
 ## License
 
-MIT — use freely in personal and commercial agent workflows.
+MIT — free for personal and commercial agent workflows.
+
+---
 
 ## Credits
 
-Built as an open-source agent skill for the AI-assisted design-to-code era.
+- Taste discipline adapted from **[Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)**
+- Optional UI search integration: [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+- Built for the agent-assisted design-to-code era
+
+<div align="center">
+
+<br>
+
+**A resume is an admin document. A website is a brand narrative.**
+
+<br>
+
+**English** | [简体中文](./README.zh-CN.md)
+
+</div>
