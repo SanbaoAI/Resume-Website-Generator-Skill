@@ -11,7 +11,7 @@
 <br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.2.0-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](skill.md)
+[![Version](https://img.shields.io/badge/version-1.3.0-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](skill.md)
 [![Agent Skills](https://img.shields.io/badge/Agent-Skills-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](#安装)
 [![Cursor](https://img.shields.io/badge/Cursor-Ready-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](install.sh)
 [![Inspired by taste-skill](https://img.shields.io/badge/inspired%20by-taste--skill-111110?style=flat-square&labelColor=F6F4F0&color=E0452E)](https://github.com/Leonxlnx/taste-skill)
@@ -27,14 +27,14 @@
 ## 预览
 
 <p align="center">
-  <img src="./assets/readme/demo-hero.png" alt="Name-first Hero：浮动 Pill 导航与数据指标" width="780" />
+  <img src="./assets/readme/demo-hero-zh.png" alt="Name-first Hero：中英文切换、浮动 Pill 导航与数据指标" width="780" />
 </p>
 
 <p align="center">
-  <img src="./assets/readme/demo-projects.png" alt="Bento 项目卡片布局" width="780" />
+  <img src="./assets/readme/demo-projects-zh.png" alt="Bento 项目卡片布局（中文）" width="780" />
 </p>
 
-<p align="center"><sub>脱敏演示输出 — 姓名、公司、时间均为虚构。布局：Name-first Hero · 浮动 Pill 导航 · Stats Bar · Bento 项目区。</sub></p>
+<p align="center"><sub>脱敏演示输出 — 姓名、公司、时间均为虚构。支持中英文切换 · Name-first Hero · 浮动 Pill 导航 · Stats Bar · Bento 项目区。</sub></p>
 
 ---
 

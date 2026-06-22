@@ -29,6 +29,7 @@ website/
 │   ├── layout.css          # Grid, containers, section spacing
 │   └── components.css      # UI components and states
 ├── scripts/
+│   ├── i18n.js             # Optional: zh/en dictionary + language toggle
 │   └── main.js             # All interactions
 └── assets/
     ├── favicon.svg
@@ -45,7 +46,9 @@ website/
 
 **components.css** — One section per component from design system. Include all states (hover, focus, active, disabled).
 
-**main.js** — DOM ready handler, nav toggle, scroll effects, intersection observer for animations. No global pollution.
+**main.js** — DOM ready handler, nav toggle, scroll effects, intersection observer for animations. Call `initSiteI18n()` when bilingual mode is enabled. No global pollution.
+
+**i18n.js** (optional) — See [i18n.md](i18n.md). `SITE_I18N` dictionary, `applySiteLanguage()`, `initSiteI18n()`. Load before `main.js`.
 
 ---
 
@@ -89,6 +92,7 @@ website/
     <!-- one h1 only, in hero -->
   </main>
   <footer>...</footer>
+  <script src="scripts/i18n.js"></script><!-- if bilingual -->
   <script src="scripts/main.js" defer></script>
 </body>
 ```
@@ -179,6 +183,7 @@ Exception: `clamp()` values in tokens themselves, and `1px` borders.
 3. **Smooth scroll** — anchor links with offset for fixed nav
 4. **Entrance animations** — Intersection Observer, respect reduced motion
 5. **Current year in footer** — `new Date().getFullYear()`
+6. **Language toggle** (when bilingual) — `initSiteI18n()` in main.js; see [i18n.md](i18n.md)
 
 ### Patterns
 

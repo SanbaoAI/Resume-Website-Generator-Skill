@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof initSiteI18n === 'function') initSiteI18n();
   initNavigation();
   initAnimations();
   initStatCounters();

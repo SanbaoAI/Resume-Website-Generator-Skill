@@ -19,6 +19,7 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 | `{ARTIFACTS_DIR}/resume-data.json` | Yes | Content verification |
 | [rules/layout-system.md](../rules/layout-system.md) | **Yes** | Layout patterns |
 | [rules/frontend-rules.md](../rules/frontend-rules.md) | Yes | Engineering standards |
+| [rules/i18n.md](../rules/i18n.md) | If bilingual | zh/en language toggle |
 | [rules/animation.md](../rules/animation.md) | Reference | Motion implementation |
 
 ---
@@ -36,6 +37,7 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 │   ├── layout.css        # Grid, section layout, responsive
 │   └── components.css    # Buttons, nav, cards, timeline, etc.
 ├── scripts/
+│   ├── i18n.js           # If bilingual: SITE_I18N + toggle (see rules/i18n.md)
 │   └── main.js           # Nav, scroll, animations, interactions
 └── assets/
     └── (images, favicon)
@@ -62,6 +64,7 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 10. **Floating pill navigation** — scroll state transition (per ui-composition spec)
 11. **Favicon** — include a simple SVG favicon
 12. **Valid HTML** — no unclosed tags, proper nesting, lang attribute on `<html>`
+13. **Bilingual (optional)** — if enabled per [rules/i18n.md](../rules/i18n.md): `i18n.js`, nav lang toggle, `data-i18n*` on all UI strings, both locales complete
 
 ---
 
@@ -87,6 +90,7 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 - [ ] Entrance animations (respecting prefers-reduced-motion)
 - [ ] Smooth anchor scrolling
 - [ ] No console errors
+- [ ] (If bilingual) `i18n.js` + lang toggle; both zh/en verified
 
 ### Accessibility
 - [ ] All images have alt text
@@ -122,6 +126,7 @@ INPUT (read ALL before writing code):
 - {ARTIFACTS_DIR}/resume-data.json
 - rules/layout-system.md
 - rules/frontend-rules.md
+- rules/i18n.md (if bilingual or demo site)
 
 LAYOUT IMPLEMENTATION (non-negotiable):
 1. tokens.css: include --text-name: clamp(3.5rem, 12vw, 7rem)
@@ -146,10 +151,10 @@ IMPLEMENTATION ORDER:
 2. Create base.css (reset, typography, focus)
 3. Create layout.css (grid, sections)
 4. Create components.css (all components with states)
-5. Build index.html (semantic structure, all content)
-6. Create main.js (nav, scroll, animations)
+5. Build index.html (semantic structure, all content, data-i18n* if bilingual)
+6. Create i18n.js (if bilingual) then main.js (nav, scroll, animations, initSiteI18n)
 7. Add favicon and meta tags
-8. Verify at 375px, 768px, 1280px viewports
+8. Verify at 375px, 768px, 1280px viewports; toggle both languages if i18n enabled
 
 Write all files to {WEBSITE_DIR}/
 

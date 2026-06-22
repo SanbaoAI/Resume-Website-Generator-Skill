@@ -5,7 +5,7 @@ description: >-
   through a 9-stage design pipeline. Use when the user wants a resume website,
   portfolio site from a CV, personal brand site, or asks to convert a resume
   into a responsive frontend. Never skip intermediate design artifacts.
-version: 1.2.0
+version: 1.3.0
 author: Resume Website Generator Skill
 license: MIT
 ---
@@ -121,6 +121,7 @@ Reference these rule files at every stage:
 | [rules/color-system.md](rules/color-system.md) | Stages 4–8 |
 | [rules/animation.md](rules/animation.md) | Stages 6–8 |
 | [rules/frontend-rules.md](rules/frontend-rules.md) | Stage 8 |
+| [rules/i18n.md](rules/i18n.md) | Stage 8 (bilingual sites) |
 | [rules/output-format.md](rules/output-format.md) | All stages |
 
 ### 3b. UI/UX Pro Max Integration (if installed)
@@ -182,6 +183,17 @@ When publishing as Skill **example** or open-source demo:
 - Replace with fictional persona (see `examples/example-input-sanbao.md`)
 - Mark example sites with "示例站点 · 信息虚构" in eyebrow
 - Link to user's public profile (e.g. GitHub) instead of real contact if provided
+- **Enable zh/en toggle** on all public demo sites ([rules/i18n.md](rules/i18n.md))
+
+### 6c. Bilingual Sites (Optional)
+
+When the user wants 中英文切换 or the resume targets both domestic and international audiences:
+
+1. Read [rules/i18n.md](rules/i18n.md) at Stage 08
+2. Provide full zh + en copy in `ui-composition.md` before coding
+3. Ship `scripts/i18n.js` + nav lang toggle; persist preference in `localStorage`
+
+Skip i18n for explicitly single-language requests.
 
 ## Layout Contract (Non-Negotiable)
 
@@ -210,7 +222,7 @@ Study the complete pipeline output in [examples/](examples/):
 
 - **Public demo (fictional):** [examples/example-input-sanbao.md](examples/example-input-sanbao.md) → [examples/example-output-sanbao/](examples/example-output-sanbao/)
 - Identity: [SanbaoAI on GitHub](https://github.com/SanbaoAI) — no real personal info
-- Features: Name-first Hero, taste-skill 反 Slop 设计, 珊瑚色暗色主题
+- Features: Name-first Hero, taste-skill 反 Slop 设计, 珊瑚色暗色主题, **中英文切换**
 
 Legacy example (Jane Chen designer): `examples/example-input.md`
 
