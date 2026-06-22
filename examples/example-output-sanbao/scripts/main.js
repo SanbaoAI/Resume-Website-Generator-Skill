@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initAnimations();
+  initStatCounters();
   initFooterYear();
-  initPdfExport();
 });
 
 function initNavigation() {
@@ -59,8 +59,8 @@ function initAnimations() {
   }
 
   document.querySelectorAll('.hero .reveal, .hero__name, .hero__tagline, .hero__subhead, .hero__actions, .stat-card').forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${i * 80}ms`;
+    if (!el.classList.contains('reveal')) el.classList.add('reveal');
+    el.style.transitionDelay = `${i * 70}ms`;
     requestAnimationFrame(() => el.classList.add('is-visible'));
   });
 
@@ -86,56 +86,28 @@ function initFooterYear() {
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 }
 
-function initPdfExport() {
-  const buttons = document.querySelectorAll('[data-export-pdf], #export-pdf');
+function initStatCounters() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const stats = document.querySelectorAll('.stat__value[data-count]');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', exportPdf);
-  });
-}
-
-async function exportPdf() {
-  const main = document.querySelector('#main');
-  if (!main) return;
-
-  const filename = 'SanbaoAI-Resume-Example.pdf';
-  const btn = document.querySelector('#export-pdf');
-  const originalText = btn?.textContent;
-
-  if (btn) {
-    btn.textContent = '生成中…';
-    btn.disabled = true;
-  }
-
-  // Prefer html2pdf.js for one-click download
-  if (typeof html2pdf !== 'undefined') {
-    const opt = {
-      margin: [10, 10, 10, 10],
-      filename,
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: {
-        scale: 2,
-        useCORS: true,
-        letterRendering: true,
-        ignoreElements: (el) => el.classList?.contains('no-print')
-      },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-
-    try {
-      await html2pdf().set(opt).from(main).save();
-    } catch (err) {
-      console.warn('html2pdf failed, falling back to print:', err);
-      window.print();
+  stats.forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    if (prefersReducedMotion || Number.isNaN(target)) {
+      el.textContent = `${target}${suffix}`;
+      return;
     }
-  } else {
-    // Fallback: browser print → Save as PDF
-    window.print();
-  }
 
-  if (btn) {
-    btn.textContent = originalText;
-    btn.disabled = false;
-  }
+    const duration = 900;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = `${Math.round(target * eased)}${suffix}`;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  });
 }

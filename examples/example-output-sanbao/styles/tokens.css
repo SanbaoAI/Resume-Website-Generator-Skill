@@ -1,27 +1,27 @@
 :root {
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F8F8FA;
+  --color-bg-primary: #F6F4F0;
+  --color-bg-secondary: #EDEAE4;
   --color-bg-elevated: #FFFFFF;
-  --color-bg-hero: #09090B;
-  --color-bg-hero-card: rgba(255, 255, 255, 0.04);
-  --color-text-primary: #09090B;
-  --color-text-secondary: #52525B;
-  --color-text-tertiary: #A1A1AA;
-  --color-text-on-dark: #FAFAFA;
-  --color-text-on-dark-muted: #A1A1AA;
-  --color-accent: #3B82F6;
-  --color-accent-hover: #2563EB;
-  --color-accent-glow: rgba(59, 130, 246, 0.35);
-  --color-accent-muted: rgba(59, 130, 246, 0.1);
-  --color-border: #E4E4E7;
-  --color-border-subtle: #F4F4F5;
-  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-bg-hero: #111110;
+  --color-bg-hero-card: rgba(255, 255, 255, 0.05);
+  --color-text-primary: #111110;
+  --color-text-secondary: #5C5A56;
+  --color-text-tertiary: #9C9890;
+  --color-text-on-dark: #F6F4F0;
+  --color-text-on-dark-muted: #A8A49C;
+  --color-accent: #E0452E;
+  --color-accent-hover: #C73A26;
+  --color-accent-muted: rgba(224, 69, 46, 0.12);
+  --color-accent-soft: rgba(224, 69, 46, 0.08);
+  --color-border: #DDD9D2;
+  --color-border-subtle: #EBE7E0;
+  --color-border-dark: rgba(255, 255, 255, 0.1);
 
-  --font-display: 'Archivo', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
-  --font-body: 'Space Grotesk', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 
-  --text-name: clamp(4.5rem, 16vw, 9.5rem);
-  --text-display: clamp(1.75rem, 3.5vw, 2.75rem);
+  --text-name: clamp(3.5rem, 13vw, 7.5rem);
+  --text-display: clamp(1.75rem, 3vw, 2.5rem);
   --text-h1: clamp(2rem, 3.5vw, 3rem);
   --text-h2: clamp(1.375rem, 2.5vw, 1.875rem);
   --text-h3: 1.25rem;
@@ -40,27 +40,25 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-24: 6rem;
-  --space-32: 8rem;
 
-  --grid-gutter: 1.5rem;
   --grid-margin-mobile: 1.25rem;
   --grid-margin-tablet: 2rem;
   --grid-margin-desktop: 3rem;
-  --content-max-width: 1200px;
-  --nav-height: 3.5rem;
+  --content-max-width: 1180px;
+  --nav-height: 52px;
+  --nav-item-height: 36px;
 
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
-  --shadow-sm: 0 1px 3px rgba(9, 9, 11, 0.06);
-  --shadow-md: 0 12px 40px rgba(9, 9, 11, 0.1);
-  --shadow-nav: 0 4px 24px rgba(9, 9, 11, 0.08);
-  --shadow-glow: 0 0 80px var(--color-accent-glow);
+  --shadow-sm: 0 1px 2px rgba(17, 17, 16, 0.06);
+  --shadow-md: 0 16px 48px rgba(17, 17, 16, 0.1);
+  --shadow-nav: 0 8px 32px rgba(17, 17, 16, 0.14);
 
   --motion-duration-fast: 150ms;
-  --motion-duration: 300ms;
-  --motion-duration-slow: 600ms;
+  --motion-duration: 280ms;
+  --motion-duration-slow: 560ms;
   --motion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
