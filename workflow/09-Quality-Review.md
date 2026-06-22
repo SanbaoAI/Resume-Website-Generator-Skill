@@ -16,7 +16,7 @@ Produce a scored review report and **automatically improve** if quality is below
 | All `{ARTIFACTS_DIR}/` files | Yes | Complete artifact chain |
 | [templates/review-template.md](../templates/review-template.md) | Yes | Report structure |
 | [rules/design-principles.md](../rules/design-principles.md) | Yes | Quality standards |
-| [rules/layout-system.md](../rules/layout-system.md) | **Yes** | Layout quality gate |
+| [rules/design-taste.md](../rules/design-taste.md) | **Yes** | Pre-flight taste gate |
 
 ---
 
@@ -37,12 +37,13 @@ If score < 85 or any Critical issue exists → fix and re-review (max 2 loops).
 3. **Evidence-based** — cite specific elements, lines, or sections for every issue
 4. **Layout gate (Critical if failed)** — name-first hero, floating pill nav, stats bar, section header blocks per `layout-spec.md` and `rules/layout-system.md`
 5. **Compare against artifacts** — verify implementation matches layout-spec.md, ui-composition.md, and design-system.md
-6. **Anti-pattern scan** — explicitly check for rejected patterns from design strategy
-7. **Accessibility audit** — contrast, focus, semantics, keyboard, reduced motion
-8. **Responsive audit** — test at 375px, 768px, 1280px
-9. **Content accuracy** — compare rendered text against resume-data.json
-10. **Improvement loop** — fix Critical and Major issues; return to earliest affected stage
-11. **Max 2 loops** — after 2 improvement cycles, deliver with remaining issues documented
+6. **Anti-pattern scan** — explicitly check for rejected patterns from design strategy AND design-taste §2
+7. **Pre-flight taste gate (Critical if failed)** — run all 12 checks in [rules/design-taste.md](../rules/design-taste.md) §8 before scoring
+8. **Accessibility audit** — contrast, focus, semantics, keyboard, reduced motion
+9. **Responsive audit** — test at 375px, 768px, 1280px
+10. **Content accuracy** — compare rendered text against resume-data.json
+11. **Improvement loop** — fix Critical and Major issues; return to earliest affected stage
+12. **Max 2 loops** — after 2 improvement cycles, deliver with remaining issues documented
 
 ### Scoring Dimensions
 
@@ -66,6 +67,7 @@ If score < 85 or any Critical issue exists → fix and re-review (max 2 loops).
 - [ ] All 8 dimensions scored with justification
 - [ ] Overall weighted score calculated
 - [ ] Critical/Major/Minor issues listed with evidence
+- [ ] Pre-flight taste checklist completed (design-taste §8)
 - [ ] Anti-pattern scan completed
 - [ ] Layout gate: name largest element, floating pill nav, 4 stats, section subtitles
 - [ ] Layout matches `layout-spec.md`
@@ -90,7 +92,7 @@ INPUT:
 - {WEBSITE_DIR}/ (all frontend files)
 - {ARTIFACTS_DIR}/ (all artifacts from Stages 01-07)
 - templates/review-template.md
-- rules/design-principles.md
+- rules/design-principles.md, rules/design-taste.md
 - rules/frontend-rules.md
 
 REVIEW PROCESS:
@@ -100,12 +102,13 @@ REVIEW PROCESS:
 4. Score all 8 dimensions (0-100) with evidence
 5. Calculate weighted overall score
 6. List all issues by severity (Critical / Major / Minor)
-7. Run anti-pattern scan (Bootstrap look, skill bars, card grids, etc.)
-8. Complete accessibility and responsive checklists
-9. Fill review-template.md completely
-10. Write to {ARTIFACTS_DIR}/review-report.md
+7. Run anti-pattern scan (Bootstrap look, skill bars, card grids, AI slop — see design-taste §2)
+8. Run pre-flight taste checklist (design-taste §8) — any fail = Critical
+9. Complete accessibility and responsive checklists
+10. Fill review-template.md completely
+11. Write to {ARTIFACTS_DIR}/review-report.md
 
-IMPROVEMENT LOOP (if overall score < 85 OR any Critical issue):
+IMPROVEMENT LOOP (if overall score < 85 OR any Critical issue OR any pre-flight fail):
 1. Identify root cause and earliest affected stage
 2. Fix upstream artifact if needed
 3. Update downstream artifacts

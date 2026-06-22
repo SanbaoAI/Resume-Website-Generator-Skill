@@ -78,6 +78,31 @@
 | Dashboard stat cards | {Yes/No} | |
 | Excessive box shadows | {Yes/No} | |
 | Lorem ipsum / placeholder content | {Yes/No} | |
+| AI purple mesh gradient hero | {Yes/No} | |
+| Inter + slate default pairing (unjustified) | {Yes/No} | |
+| Em dashes in UI copy | {Yes/No} | |
+| Beige + brass default palette (unjustified) | {Yes/No} | |
+
+---
+
+## Pre-Flight Taste Gate (design-taste §8)
+
+| # | Check | Pass? | Notes |
+|---|-------|-------|-------|
+| 1 | Design Read + three dials in strategy | {✓/✗} | |
+| 2 | Name-first hero + 4 real stats | {✓/✗} | |
+| 3 | Floating pill nav | {✓/✗} | |
+| 4 | Eyebrow count ≤ ceil(sections/3) | {✓/✗} | |
+| 5 | ≥4 layout families (6+ sections) | {✓/✗} | |
+| 6 | Single accent locked sitewide | {✓/✗} | |
+| 7 | No skill bars / slop patterns | {✓/✗} | |
+| 8 | Font pairing not lazy default | {✓/✗} | |
+| 9 | One contact CTA label | {✓/✗} | |
+| 10 | Theme lock (no mid-scroll flip) | {✓/✗} | |
+| 11 | Motion matches dial; reduced-motion OK | {✓/✗} | |
+| 12 | Content matches resume-data.json | {✓/✗} | |
+
+**Pre-flight result:** {ALL PASS | FAIL — list failed checks}
 
 ---
 

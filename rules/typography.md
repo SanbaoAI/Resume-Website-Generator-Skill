@@ -11,23 +11,29 @@ Standards for Stages 05 (Design System), 07 (UI Composition), and 08 (Frontend I
 Choose ONE distinctive font for headlines. It carries brand identity.
 
 **Preferred categories:**
-- Geometric sans: Instrument Sans, Satoshi, General Sans, Syne
-- Neo-grotesque: Inter (if used only for display at large sizes), Helvetica Now
-- Serif display: Fraunces, Newsreader, Playfair Display (editorial feel)
-- Humanist: DM Sans, Outfit, Plus Jakarta Sans
+- Geometric sans: Syne, Satoshi, Outfit, Plus Jakarta Sans, DM Sans, General Sans
+- Neo-grotesque display: Cabinet Grotesk, Helvetica Now (not Inter as lazy default)
+- Humanist display: DM Sans, Outfit
 
-**Avoid:**
+**Serif display:** only when Design Read in `design-strategy.md` is editorial/luxury/publication. Do not default to serif "because creative."
+
+**Avoid as defaults:**
+- Inter (acceptable only when strategy explicitly asks Linear/neutral)
+- Fraunces, Instrument Serif (common AI tells — see [design-taste.md](design-taste.md))
 - Arial, Helvetica (unmodified system defaults)
 - Roboto (overused in generic templates)
 - Comic Sans, Papyrus, Impact
 - More than 2 font families total
+- Reusing the same pairing across consecutive projects
 
 ### Body Font
 
 Choose ONE highly readable font for body text.
 
 **Preferred:**
-- Inter, Source Sans 3, IBM Plex Sans, Literata, Lora (serif body for editorial)
+- Source Sans 3, IBM Plex Sans, Literata (serif body only when Design Read is editorial)
+
+**Discouraged as default body:** Inter (use only when strategy documents Linear/neutral intent)
 
 **Requirements:**
 - Excellent hinting at 16–18px
@@ -112,7 +118,7 @@ Apply via `max-width: 65ch` on text containers, not global.
 
 ## Section Labels (Overlines)
 
-Section labels create rhythm and wayfinding. Every major section should have one.
+Section labels create rhythm and wayfinding. **Eyebrow restraint applies:** max 1 uppercase tracking label per 3 sections (see [design-taste.md](design-taste.md) §5). The headline alone is often enough.
 
 ```css
 .section-label {

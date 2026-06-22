@@ -144,6 +144,22 @@ Accessibility is design quality, not compliance checkbox.
 
 ---
 
+## Taste & Anti-Slop
+
+Full taste discipline: [design-taste.md](design-taste.md) (Design Read, three dials, pre-flight checklist).
+
+High-signal slop patterns that fail review:
+
+- AI purple/blue gradient mesh hero
+- Inter + slate-900 as unthinking default pairing
+- Uppercase eyebrow on every section (max 1 per 3 sections)
+- Warm beige + brass + espresso palette without brand justification
+- Em dashes (`—`) in UI copy
+- Same layout family repeated across 3+ sections
+- Invented precise metrics not in the resume
+
+---
+
 ## Anti-Patterns (Automatic Rejection)
 
 These patterns fail Stage 09 review if detected:

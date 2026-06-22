@@ -12,7 +12,8 @@ This artifact is the single source of truth for Stage 8 frontend implementation.
 
 | Input | Required | Description |
 |-------|----------|-------------|
-| `{ARTIFACTS_DIR}/design-strategy.md` | Yes | Creative direction |
+| `{ARTIFACTS_DIR}/design-strategy.md` | Yes | Creative direction + Design Read + three dials |
+| [rules/design-taste.md](../rules/design-taste.md) | Yes | Accent lock, shape consistency, palette rotation |
 | `{ARTIFACTS_DIR}/information-architecture.md` | Yes | Components needed per section |
 | [templates/design-system-template.md](../templates/design-system-template.md) | Yes | Output structure |
 | [rules/typography.md](../rules/typography.md) | Yes | Type standards |
@@ -38,12 +39,13 @@ Use [templates/design-system-template.md](../templates/design-system-template.md
 4. **Spacing scale** — use 4px or 8px base; minimum 8 steps
 5. **Color palette** — primary, secondary, accent, neutral scale (50–950 or equivalent), semantic colors (success, error), surface colors
 6. **Contrast** — all text/background pairs must meet WCAG AA (4.5:1 body, 3:1 large text)
-7. **Grid** — define columns, gutters, margins per breakpoint (375, 768, 1280, 1440)
-8. **Components** — specify every UI component needed: buttons, links, nav, cards, timeline items, tags, form inputs, footer
-9. **States** — default, hover, focus, active, disabled for interactive elements
-10. **Border radius, shadows, borders** — define sparingly; prefer flat/minimal
-11. **No HTML/JSX** — token definitions and component specs in markdown only
-12. **Google Fonts or system stacks** — specify exact font names and loading strategy
+7. **Taste tokens** — document corner-radius system, accent lock, and font pairing rationale per design-taste; no second accent color
+8. **Grid** — define columns, gutters, margins per breakpoint (375, 768, 1280, 1440)
+9. **Components** — specify every UI component needed: buttons, links, nav, cards, timeline items, tags, form inputs, footer
+10. **States** — default, hover, focus, active, disabled for interactive elements
+11. **Border radius, shadows, borders** — define sparingly; prefer flat/minimal
+12. **No HTML/JSX** — token definitions and component specs in markdown only
+13. **Google Fonts or system stacks** — specify exact font names and loading strategy
 
 ---
 

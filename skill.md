@@ -5,7 +5,7 @@ description: >-
   through a 9-stage design pipeline. Use when the user wants a resume website,
   portfolio site from a CV, personal brand site, or asks to convert a resume
   into a responsive frontend. Never skip intermediate design artifacts.
-version: 1.1.0
+version: 1.2.0
 author: Resume Website Generator Skill
 license: MIT
 ---
@@ -114,6 +114,7 @@ Reference these rule files at every stage:
 | File | Apply When |
 |------|------------|
 | [rules/layout-system.md](rules/layout-system.md) | **Stages 3–8 (mandatory)** |
+| [rules/design-taste.md](rules/design-taste.md) | **Stages 4–9 (anti-slop taste)** |
 | [rules/design-principles.md](rules/design-principles.md) | Stages 3–9 |
 | [rules/typography.md](rules/typography.md) | Stages 5–8 |
 | [rules/spacing.md](rules/spacing.md) | Stages 5–8 |
@@ -169,7 +170,6 @@ If the review score is below 85/100 or any **Critical** issue exists:
 Present:
 
 - Link or path to `website/` (runnable static site)
-- **PDF export** button working (`导出 PDF` in nav/hero)
 - Summary of design decisions from `design-strategy.md`
 - Review score from `review-report.md`
 - Instructions to preview locally (`npx serve website/` or open `index.html`)
@@ -200,7 +200,9 @@ The generated website must resemble **premium product websites**, not resume tem
 
 **Prioritize:** typography, whitespace, visual hierarchy, brand identity, grid system, responsive design, accessibility, micro-interactions, minimalism, editorial layout, modern SaaS design, Apple-level visual polish.
 
-**Avoid:** generic resume templates, Bootstrap aesthetics, dashboard layouts, card-grid LinkedIn clones, excessive gradients, stock-photo hero sections, rainbow skill bars.
+**Avoid:** generic resume templates, Bootstrap aesthetics, dashboard layouts, card-grid LinkedIn clones, excessive gradients, stock-photo hero sections, rainbow skill bars, AI-default slop (purple mesh heroes, Inter+slate everywhere, beige+brass "premium" palette on every site).
+
+**Taste discipline:** Read [rules/design-taste.md](rules/design-taste.md) at Stage 04. Output a **Design Read** + **three dials** (VARIANCE / MOTION / DENSITY). Run the **Pre-Flight Checklist** at Stage 09. Inspired by [taste-skill](https://github.com/Leonxlnx/taste-skill).
 
 ## Reference Example
 
@@ -208,7 +210,7 @@ Study the complete pipeline output in [examples/](examples/):
 
 - **Public demo (fictional):** [examples/example-input-sanbao.md](examples/example-input-sanbao.md) → [examples/example-output-sanbao/](examples/example-output-sanbao/)
 - Identity: [SanbaoAI on GitHub](https://github.com/SanbaoAI) — no real personal info
-- Features: Name-first Hero, PDF export, dark theme, Bento grid
+- Features: Name-first Hero, taste-skill 反 Slop 设计, 珊瑚色暗色主题
 
 Legacy example (Jane Chen designer): `examples/example-input.md`
 

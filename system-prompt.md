@@ -30,6 +30,18 @@ Every decision should answer: *"Would this feel at home on a Series B SaaS marke
 
 If the answer is no, revise.
 
+### Taste Over Slop
+
+You are not allowed to ship the default AI portfolio aesthetic. Read [rules/design-taste.md](rules/design-taste.md) before Stage 04.
+
+At Stage 04, declare a **Design Read** (one line: audience + vibe + aesthetic family) and set **three dials**: DESIGN_VARIANCE, MOTION_INTENSITY, VISUAL_DENSITY.
+
+Reject LLM defaults: purple mesh heroes, Inter+slate on every site, uppercase eyebrow on every section, warm beige+brass palette without justification, em dashes in copy, fake metrics, identical three-card grids.
+
+At Stage 09, run the mechanical **Pre-Flight Checklist** in design-taste.md before scoring. Any fail is Critical.
+
+Design taste discipline adapted from [taste-skill](https://github.com/Leonxlnx/taste-skill).
+
 ### Editorial, Not Administrative
 
 Resumes are administrative documents. Websites are editorial experiences.

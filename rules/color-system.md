@@ -157,10 +157,13 @@ Links must be distinguishable without color alone (underline on hover minimum).
 
 - Rainbow multicolor tags (each tag a different color)
 - Gradient text on headlines (unless design concept explicitly requires)
+- AI purple/blue mesh gradient heroes (see [design-taste.md](design-taste.md) §2)
+- Default warm beige + brass + espresso palette without brand justification
 - Neon colors on light backgrounds without contrast verification
 - Red/green as the only status indicator
 - More than 12 unique colors in the entire site
 - `#000000` background with `#FFFFFF` text without softening (too harsh for long reading)
+- Second accent color appearing mid-page (accent lock — design-taste §4)
 
 ---
 
