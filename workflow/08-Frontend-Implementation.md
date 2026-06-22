@@ -59,10 +59,9 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 7. **No frameworks by default** — vanilla HTML/CSS/JS unless user requested a framework
 8. **No Bootstrap, no uncustomized Tailwind** — if using Tailwind, every utility must map to design tokens via config
 9. **Smooth scroll** — anchor navigation with `scroll-behavior: smooth` and JS fallback
-10. **PDF export** — include `导出 PDF` button; use html2pdf.js + `print.css` fallback
-11. **Floating pill navigation** — scroll state transition (per ui-composition spec)
-12. **Favicon** — include a simple SVG favicon
-13. **Valid HTML** — no unclosed tags, proper nesting, lang attribute on `<html>`
+10. **Floating pill navigation** — scroll state transition (per ui-composition spec)
+11. **Favicon** — include a simple SVG favicon
+12. **Valid HTML** — no unclosed tags, proper nesting, lang attribute on `<html>`
 
 ---
 
@@ -73,8 +72,6 @@ This is the **first stage where HTML, CSS, and JavaScript are permitted**.
 - [ ] Skip-to-content link as first focusable element
 - [ ] All sections from IA present with correct anchor IDs
 - [ ] Meta tags: title, description, viewport, OG tags
-- [ ] `print.css` for PDF/print export
-- [ ] PDF export button functional (html2pdf or print fallback)
 
 ### Styles
 - [ ] `tokens.css` matches design-system.md custom properties exactly

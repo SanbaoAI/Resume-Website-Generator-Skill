@@ -178,8 +178,7 @@ Exception: `clamp()` values in tokens themselves, and `1px` borders.
 2. **Floating nav scroll state** — light/dark transition on hero exit
 3. **Smooth scroll** — anchor links with offset for fixed nav
 4. **Entrance animations** — Intersection Observer, respect reduced motion
-5. **PDF export** — `导出 PDF` button; html2pdf.js CDN + `print.css` fallback to `window.print()`
-6. **Current year in footer** — `new Date().getFullYear()`
+5. **Current year in footer** — `new Date().getFullYear()`
 
 ### Patterns
 
