@@ -249,12 +249,22 @@ This skill is agent-agnostic. Any AI coding agent can execute it by:
 3. Writing artifacts to disk between stages
 4. Using rules and templates as constraints
 
-For Cursor: one-line install:
+**One-line install** for Cursor, Claude Code, Codex, and OpenCode:
 
 ```bash
-bash install.sh
+bash install.sh              # all four agents
+bash install.sh --cursor     # single agent (also: --claude, --codex, --opencode)
 ```
+
+Install paths:
+
+| Agent | Path |
+|-------|------|
+| Cursor | `~/.cursor/skills/resume-website-generator/` |
+| Claude Code | `~/.claude/skills/resume-website-generator/` |
+| Codex | `~/.codex/skills/resume-website-generator/` |
+| OpenCode | `~/.config/opencode/skills/resume-website-generator/` |
 
 (From this folder, or `bash Resume-Website-Generator-Skill/install.sh` from your project root.)
 
-For Claude Code / Codex / Gemini CLI: point the agent at this repository root and instruct it to execute `skill.md`.
+For Gemini CLI, Windsurf, Copilot, and 60+ others: `npx skills add SanbaoAI/Resume-Website-Generator-Skill -g -y` or load `skill.md` manually.

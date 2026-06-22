@@ -64,25 +64,50 @@ PDF / DOC / Markdown resume
 
 ## Install
 
-### Cursor (recommended)
+One script installs to **Cursor, Claude Code, Codex, and OpenCode** (user-scoped skill dirs, `skill.md` → `SKILL.md`):
 
 ```bash
-# From your project root
-bash Resume-Website-Generator-Skill/install.sh
-
-# Or from inside the skill folder
+git clone https://github.com/SanbaoAI/Resume-Website-Generator-Skill.git
 cd Resume-Website-Generator-Skill && bash install.sh
 ```
 
-Then ask Cursor:
+**Install flags** (default = all four agents):
 
-> Use the resume-website-generator skill to build a personal website from my resume.
+| Flag | Target path |
+|------|-------------|
+| `--cursor` | `~/.cursor/skills/resume-website-generator/` |
+| `--claude` | `~/.claude/skills/resume-website-generator/` |
+| `--codex` | `~/.codex/skills/resume-website-generator/` |
+| `--opencode` | `~/.config/opencode/skills/resume-website-generator/` |
 
-### Any Agent
+```bash
+bash install.sh --cursor --claude    # pick agents
+bash install.sh --help
+```
 
-1. Add this repo to agent context
-2. Load [`skill.md`](skill.md) + [`system-prompt.md`](system-prompt.md)
-3. Provide a resume file and execute [`workflow/`](workflow/) stages 01 → 09 in order
+Restart your agent (or start a new session), then:
+
+> Use resume-website-generator to build a personal website from my resume.
+
+---
+
+### Other agents
+
+**skills.sh** (60+ agents including Gemini CLI, Windsurf, Copilot):
+
+```bash
+npx skills add SanbaoAI/Resume-Website-Generator-Skill -g -y
+```
+
+**Gemini CLI:**
+
+```bash
+gemini skills install https://github.com/SanbaoAI/Resume-Website-Generator-Skill --consent
+```
+
+**Manual fallback** — load [`skill.md`](skill.md) + [`system-prompt.md`](system-prompt.md), run [`workflow/`](workflow/) 01 → 09. See [FAQ](#faq).
+
+---
 
 ### Preview the demo site
 
@@ -209,6 +234,9 @@ See [`workflow/09-Quality-Review.md`](workflow/09-Quality-Review.md) and [`templ
 ---
 
 ## FAQ
+
+**Which agents are supported?**  
+Cursor, Claude Code, Codex, Gemini CLI, OpenCode, Windsurf, GitHub Copilot, Cline, and 60+ others via [skills.sh](https://skills.sh). Any agent can also run it manually by loading `skill.md` + `workflow/`. See [Install](#install).
 
 **How is this different from "just ask AI to build my resume site"?**  
 This Skill enforces artifact-first delivery: strategy, system, and wireframes exist before any code. The first version is not a template dump.
